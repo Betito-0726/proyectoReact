@@ -1,0 +1,6 @@
+[build]
+  # Esta sección le dice al escáner de secretos de Netlify qué claves debe ignorar.
+  # Le estamos diciendo que está bien que nuestras claves de Firebase aparezcan en el resultado final.
+  [build.secrets_scan]
+    # Lista de claves a omitir. El '*' es un comodín que significa "cualquier cosa".
+    omit_keys = ["VITE_FIREBASE_*"]
