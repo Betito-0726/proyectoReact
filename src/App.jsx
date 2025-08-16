@@ -5,14 +5,15 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
 
 // --- CONFIGURACIÓN DE FIREBASE ---
+// Las credenciales ahora se leen de forma segura desde las variables de entorno.
 const firebaseConfig = {
-  apiKey: "AIzaSyDy5m7IvmEcTtgEM_dfINUA33oL2HQ6wrA",
-  authDomain: "mi-sitio-react.firebaseapp.com",
-  projectId: "mi-sitio-react",
-  storageBucket: "mi-sitio-react.firebasestorage.app",
-  messagingSenderId: "7956689896",
-  appId: "1:7956689896:web:820dc002d859628a86ea5d",
-  measurementId: "G-3FG0FQGC9H"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Inicializa Firebase
